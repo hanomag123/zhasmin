@@ -1,0 +1,184 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+ul {
+    list-style: none;
+}
+}
+@font-face {
+    font-family: 'Proto Mono';
+    src: url(./../assets/fonts/Proto.Mono/ProtoMonoLight.ttf);
+}
+.header {
+    width: 100vw;
+    height: 65px;
+    
+    background: #FFA6D6;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+
+    padding-left: 3%;
+    padding-right: 3.3%;
+
+    display: grid;
+    grid-template-columns: 35.5% minmax(100px, 42.3%) minmax(150px, 6.5%) minmax(100px, 4.5%);
+    grid-gap: 1.5%;
+    justify-content: space-between;
+
+    font-family: 'Proto Mono';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    letter-spacing: 0.155em;
+    
+    /* текст */
+    
+    color: #FDE4FA;
+
+    position: fixed;
+    &__item {
+        display: flex;
+        gap: 1vw;
+        align-items: center;
+
+        user-select: none;
+        &-img {
+            display: flex;
+            align-items: center;
+            width: 33px;
+            height: 40px;
+            background: no-repeat center/contain url('./../assets/svg/star.svg');
+        }
+        .logo {
+            width: 53px;
+            height: 53px;
+            background: no-repeat center/contain url('./../assets/svg/bigStar.svg');
+            animation: rotate 1s ease-in-out infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        a {
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #FDE4FA;
+            &:hover {
+                .header__item-img {
+                    background: no-repeat center/contain url('./../assets/svg/starHover.svg');
+                }
+                .header__item-title {
+                    color: #F976BD;
+                }
+            }
+            &:active {
+                .header__item-title {
+                    color: #FDE4FA
+                }
+                .header__item-img {
+                    background: no-repeat center/contain url('./../assets/svg/starForCards.svg');
+                }
+            }
+            &:visited {
+                color: #FDE4FA;
+            }
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    min-height: 3235px;
+    background: no-repeat center/cover url('./../assets/svg/linesMain.png'), url('./../assets/svg/backgroundMain.png');
+    .ecommerseOne {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+
+        width: 897px;
+        height: 645px;
+        position: absolute;
+        left: 311px;
+        top: 90px;
+        
+        /* для панелей */
+        
+        background: #CFC4FE;
+        /* акцентный */
+        
+        border: 5px solid #F976BD;
+        border-radius: 25px;
+        .ecommerseOne__block {
+            height: 515px;
+            width: 887px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 5px solid #F976BD;
+            border-bottom: 5px solid #F976BD;
+        }
+        &__img {
+            width: 797px;
+            height: 495px;
+            overflow-y: hidden;
+            border: 4px solid #F976BD;
+            border-radius: 5px;
+        }
+        &__stars {
+            position: absolute;
+            bottom: -40px;
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 90px;
+    left: 23px;
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        li {
+            font-family: 'Proto Mono';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 29px;
+            /* identical to box height */
+            
+            letter-spacing: 0.155em;
+            
+            /* текст для папок */
+            
+            color: #7B2F41;
+            
+            
+            /* Inside auto layout */
+            
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+
+            text-align: center;
+            img {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 11px;
+            }
+        }
+    }
+}
